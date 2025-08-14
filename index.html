@@ -1,4 +1,543 @@
-<section id="clients" class="clients">
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>TESIS ABC</title>
+
+  <!-- Incluimos la fuente Open Sans desde Google Fonts -->
+
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet" />
+
+  <style>
+
+    /* Reset some default styles */
+
+    * {
+
+      box-sizing: border-box;
+
+      margin: 0;
+
+      padding: 0;
+
+    }
+
+ 
+
+    /* Tipografía general */
+
+    body {
+
+      font-family: 'Open Sans', sans-serif;
+
+      line-height: 1.6;
+
+      background-color: #ffffff; /* Fondo blanco */
+
+      color: #333; /* Texto general gris oscuro para buena legibilidad */
+
+    }
+
+ 
+
+    /* Estilo para títulos */
+
+    h1, h2, h3 {
+
+      font-family: 'Open Sans', sans-serif;
+
+      font-weight: 700;
+
+    }
+
+ 
+
+    /* Títulos principales (ejemplo: en parallax y secciones) */
+
+    h2 {
+
+      font-size: 20px;
+
+      color: #003366; /* Azul marino para títulos */
+
+    }
+
+    h3 {
+
+      font-size: 20px;
+
+      color: #003366; /* Azul marino para subtítulos */
+
+    }
+
+ 
+
+    /* Párrafos y textos del cuerpo */
+
+    p {
+
+      font-size: 14px;
+
+      color: #555; /* Gris medio para el cuerpo del texto */
+
+    }
+
+ 
+
+    /* Parallax section */
+
+    .parallax {
+
+      background-image: url('https://images.unsplash.com/photo-1651551131658-87f9472f2d8e?q=80&w=1740&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+
+      height: 500px;
+
+      background-attachment: fixed;
+
+      background-position: center;
+
+      background-repeat: no-repeat;
+
+      background-size: cover;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      color: #fff;
+
+      font-size: 20px; /* tamaño de texto en parallax si hay */
+
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+
+    }
+
+ 
+
+    /* Navigation menu */
+
+    nav {
+
+      background-color: #003366; /* Azul marino */
+
+      display: flex;
+
+      justify-content: space-between;
+
+      padding: 15px 30px;
+
+      position: sticky;
+
+      top: 0;
+
+      z-index: 999;
+
+    }
+
+ 
+
+    nav .logo {
+
+      color: #fff;
+
+      font-weight: bold;
+
+      font-size: 1.5em;
+
+      font-family: 'Open Sans', sans-serif;
+
+    }
+
+ 
+
+    nav ul {
+
+      list-style: none;
+
+      display: flex;
+
+      align-items: center;
+
+    }
+
+ 
+
+    nav ul li {
+
+      margin-left: 20px;
+
+    }
+
+ 
+
+    nav ul li a {
+
+      color: #fff;
+
+      text-decoration: none;
+
+      font-weight: 500;
+
+      font-family: 'Open Sans', sans-serif;
+
+      font-size: 14px;
+
+    }
+
+ 
+
+    /* Contact info section - moved to end */
+
+    .contact-info {
+
+      background-color: #666; /* gris oscuro */
+
+      color: #fff;
+
+      padding: 20px;
+
+      text-align: center;
+
+      font-family: 'Open Sans', sans-serif;
+
+    }
+
+ 
+
+    /* Sections styling */
+
+    section {
+
+      padding: 50px 20px;
+
+    }
+
+ 
+
+    /* Success stories */
+
+    .stories h2 {
+
+      text-align: center;
+
+      margin-bottom: 30px;
+
+      font-family: 'Open Sans', sans-serif;
+
+    }
+
+ 
+
+    .story {
+
+      max-width: 800px;
+
+      margin: 0 auto 20px auto;
+
+      padding: 20px;
+
+      background-color: #f0f0f0; /* gris claro */
+
+      border-radius: 8px;
+
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+
+    }
+
+ 
+
+    /* Client logos */
+
+    .clients h2 {
+
+      text-align: center;
+
+      margin-bottom: 30px;
+
+      font-family: 'Open Sans', sans-serif;
+
+    }
+
+ 
+
+    .client-logos {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      justify-content: center;
+
+      gap: 20px;
+
+    }
+
+ 
+
+    .client-logo {
+
+      width: 150px;
+
+      height: 80px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      background-color: #fff;
+
+      padding: 10px;
+
+      border-radius: 0px;
+
+      box-shadow: 0 0px 0px rgba(0,0,0,0.1);
+
+    }
+
+ 
+
+    /* WhatsApp Bubble */
+
+    .whatsapp-bubble {
+
+      position: fixed;
+
+      bottom: 20px;
+
+      right: 20px;
+
+      background-color: #003366; /* azul marino */
+
+      color: #fff;
+
+      width: 60px;
+
+      height: 60px;
+
+      border-radius: 50%;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      cursor: pointer;
+
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+
+      z-index: 1000;
+
+      font-size: 24px;
+
+      transition: background-color 0.3s;
+
+    }
+
+    .whatsapp-bubble:hover {
+
+      background-color: #002244; /* tono más oscuro de azul marino */
+
+    }
+
+ 
+
+    /* Call button for mobile prioritization */
+
+    .call-button {
+
+      position: fixed;
+
+      bottom: 90px; /* above WhatsApp bubble */
+
+      right: 20px;
+
+      background-color: #003366; /* azul marino */
+
+      color: #fff;
+
+      padding: 12px 20px;
+
+      border-radius: 50px;
+
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+
+      font-size: 1em;
+
+      cursor: pointer;
+
+      z-index: 1000;
+
+      display: none; /* hidden on larger screens by default */
+
+      align-items: center;
+
+      text-decoration: none;
+
+    }
+
+ 
+
+    .call-button span {
+
+      margin-left: 10px;
+
+    }
+
+ 
+
+    /* Responsive styles */
+
+    @media (max-width: 768px) {
+
+      /* Stack nav items vertically if needed */
+
+      nav {
+
+        flex-direction: column;
+
+        align-items: center;
+
+      }
+
+      nav ul {
+
+        flex-direction: column;
+
+        width: 100%;
+
+        align-items: center;
+
+      }
+
+      nav ul li {
+
+        margin: 10px 0;
+
+      }
+
+ 
+
+      /* Show call button on mobile, hide WhatsApp bubble if desired */
+
+      .call-button {
+
+        display: flex;
+
+      }
+
+      .whatsapp-bubble {
+
+        bottom: 20px;
+
+        right: 20px;
+
+      }
+
+    }
+
+ 
+
+    /* Optional: hide call button on larger screens */
+
+    @media (min-width: 769px) {
+
+      .call-button {
+
+        display: none;
+
+      }
+
+    }
+
+ 
+
+    /* Smooth scrolling */
+
+    html {
+
+      scroll-behavior: smooth;
+
+    }
+
+  </style>
+
+</head>
+
+<body>
+
+ 
+
+  <!-- Navigation Menu -->
+
+  <nav>
+
+    <div class="logo">Tesis ABC</div>
+
+    <ul>
+
+      <li><a href="#parallax">Inicio</a></li>
+
+      <li><a href="#stories">Comentarios</a></li>
+
+      <li><a href="#clients">Universidades</a></li>
+
+      <li><a href="#contact">Contacto</a></li>
+
+    </ul>
+
+  </nav>
+
+ 
+
+  <!-- Parallax Section -->
+
+  <section id="parallax" class="parallax">
+
+    Bienvenidos a Tesis ABC
+
+  </section>
+
+ 
+
+  <!-- Success Stories -->
+
+  <section id="stories" class="stories">
+
+    <h2>Comentarios</h2>
+
+    <div class="story">
+
+      <h3>María Rivas, estudiante de comunicación</h3>
+
+      <p>Mil gracias por corregir, dar estilo y asesorar mi tesis; me dio confianza para defenderla.</p>
+
+    </div>
+
+    <div class="story">
+
+      <h3>Diego Castro, estudiante de Derecho</h3>
+
+      <p>Agradezco la revisión, el formato y la asesoría que fortalecieron mi proyecto de graduación y mi tesis.</p>
+
+    </div>
+
+  </section>
+
+ 
+
+  <!-- Client Logos --> 
+  <section id="clients" class="clients">
   <h2>Universidades que confian en nuestro trabajo</h2>
   <div class="client-logos">
     <div class="client-logo">
@@ -19,15 +558,77 @@
       <img
         src="https://imagizer.imageshack.com/img922/4935/AUWmDS.png"
         alt="Client 3"
-        style="width: 192px"
+        style="width: 96px"
       />
     </div>
     <div class="client-logo">
       <img
         src="https://imagizer.imageshack.com/img922/2679/VEukiq.png"
         alt="Client 4"
-        style="width: 192px"
+        style="width: 96px"
       />
     </div>
   </div>
 </section>
+
+ 
+
+  <!-- Contact Us (moved to bottom) -->
+
+  <section id="contact" class="contact-info">
+
+    <h2>Contact Us</h2>
+
+    <p>Phone: <a href="tel:1234567890" style="color:#fff;font-weight:bold;text-decoration:none;">(123) 456-7890</a></p>
+
+    <p>Email: <a href="mailto:info@mycompany.com" style="color:#fff;text-decoration:underline;">info@mycompany.com</a></p>
+
+    <p>Address: 123 Main St, City</p>
+
+  </section>
+
+ 
+
+  <!-- WhatsApp Contact Bubble -->
+
+  <div class="whatsapp-bubble" id="whatsappBtn" title="Contact us on WhatsApp">
+
+    💬
+
+  </div>
+
+ 
+
+  <!-- Call Button for Mobile -->
+
+  <a href="tel:1234567890" class="call-button" id="callBtn" title="Call us now">
+
+    📞 <span>Call Us</span>
+
+  </a>
+
+ 
+
+  <!-- JavaScript para WhatsApp -->
+
+  <script>
+
+    document.getElementById('whatsappBtn').addEventListener('click', function() {
+
+      const phoneNumber = '15551234567'; // Tu número de WhatsApp
+
+      const message = encodeURIComponent('Hello! I would like to get in touch.');
+
+      const url = `https://wa.me/${phoneNumber}?text=${message}`;
+
+      window.open(url, '_blank');
+
+    });
+
+  </script>
+
+ 
+
+</body>
+
+</html>
